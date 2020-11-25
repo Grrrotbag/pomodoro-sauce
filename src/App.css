@@ -1,38 +1,162 @@
-.App {
+/* FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Press+Start+2P&family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Faster+One&display=swap");
+
+/* GLOBAL */
+:root {
+  --honeydew: #f1faee;
+  --imperial-red: #e63946;
+  --celadon-blue: #457b9d;
+  --powder-blue: #a8dadc;
+  --charcoal: #404e5c;
+  --prussian-blue: #1d3557;
+  --outrageous-orange: #fc7a57;
+  --lcd-display: rgba(125, 140, 115, 1);
+  --gradient: radial-gradient(circle, rgba(92, 64, 64, 1) 0%, rgba(50, 57, 56, 1) 43%, rgba(50, 52, 57, 1) 100%);
+  --padding: 20px;
+  --belize-hole: #2980b9; /* hsl(204, 64%, 44%) or rgb(41, 128, 185) */
+  --peter-river: #3498db; /* hsl(204, 70%, 53%) or rgb(52, 152, 219) */
+  --nephritis: #27ae60; /* hsl(145, 63%, 42%) or rgb(39, 174, 96) */
+  --emerald: #2ecc71; /* hsl(145,63%,49%) or rgb(46,204,113) */
+  --green-sea: #16a085; /* hsl(168,76%,36%) or rgb(22,160,133) */
+  --turquoise: #1abc9c; /* hsl(168,76%,42%) or rgb(26,188,156) */
+  --pomegranate: #c0392b; /* hsl(6, 63% ,46%) or rgb(192, 57, 43) */
+  --alizarin: #e74c3c; /* hsl(6, 78%, 57%) or rgb(231, 76, 60) */
+  --pumpkin: #d35400; /* hsl(24, 100%, 41%) or rgb(211, 84, 0) */
+  --carrot: #e67e22; /* hsl(28, 80%, 52%) or rgb(230, 126, 34) */
+  --orange: #f39c12; /* hsl(37, 90%, 51%) or rgb(243, 156, 18) */
+  --sunflower: #f1c40f; /* hsl(48, 89%, 50%) or rgb(241, 196, 15) */
+  --midnight-blue: #2c3e50; /* hsl(210, 29%, 24%) or rgb(44, 62, 80) */
+  --wet-asphalt: #34495e; /* hsl(210°, 29%, 29%) or rgb(52, 73, 94) */
+  --silver: #bdc3c7; /* hsl(204, 8%, 76%) or rgb(189, 195, 199) */
+  --clouds: #ecf0f1; /* hsl(192, 15%, 94%) or rgb(236, 240, 241) */
+  --asbestos: #7f8c8d; /* hsl(184, 6%, 53%) or rgb(127, 140, 141) */
+  --concrete: #95a5a6; /* hsl(184, 9%, 62%) or rgb(149, 165, 166) */
+  --wisteria: #8e44ad; /* hsl(282, 44%, 47%) or rgb(142, 68, 173) */
+  --amethyst: #9b59b6; /* hsl(283, 39%, 53%) or rgb(155, 89, 182) */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--gradient);
+}
+
+#main-container {
+  padding: 50px;
+  background: #333239;
+  width: 350px;
+  border-radius: 25px 25px 25px 25px;
+  box-shadow: inset -3px 3px 3px rgba(255, 255, 255, 0.2), inset 3px -3px 3px rgba(0, 0, 0, 0.8),
+    4px 4px 15px rgba(0, 0, 0, 0.2), -4px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#header {
+  margin-bottom: var(--padding);
+  font-size: 0.9em;
+  font-family: "Audiowide";
+  text-transform: uppercase;
+  background: linear-gradient(
+    to right,
+    #d16ba5,
+    #c777b9,
+    #ba83ca,
+    #aa8fd8,
+    #9a9ae1,
+    #8aa7ec,
+    #79b3f4,
+    #69bff8,
+    #52cffe,
+    #41dfff,
+    #46eefa,
+    #5ffbf1
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#timer-controls {
+  font-family: sans-serif;
+  color: white;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+#break-box {
+  margin-bottom: 15px;
+  /*   background: red; */
+  text-align: center;
+  padding: 5px;
+}
+
+#session-box {
+  margin-bottom: 15px;
+  /*   background: green; */
+  text-align: center;
+  padding: 5px;
+}
+
+#break-label {
+  font-size: 0.9em;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+#break-length {
+  font-size: 15px;
+}
+
+#session-label {
+  font-size: 0.9em;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+#timer-display {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  font-family: sans-serif;
+  font-size: 32px;
+  text-align: center;
+  padding: 25px;
+  border: 1px white solid;
+  border-radius: 10px;
+}
+
+#timer-controls {
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 5px;
+  margin: 5px;
+  background: none;
+  border: none;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.btn:active {
+  position: relative;
+  top: 1px;
+}
+.btn:focus {
+  outline: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-control {
+}
+.btn-timer {
+  font-size: 30px;
+  padding: 30px;
 }
